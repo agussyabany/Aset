@@ -22,13 +22,13 @@ if(isset($_POST['add'])) {
 	}
 	echo" <script>window.location='data.php';</script>";
  
-elseif (isset($_POST['add'])) {
-	$idDep = trim(mysqli_real_escape_string($con,$_POST['departemen']));
-	$kodeDiv = trim(mysql_escape_string($con,$_POST['kode']));
-	$namaDiv = trim(mysql_escape_string($con,$_POST]['divisi']));
+// else if (isset($_POST['add'])) {
+// 	$idDep = trim(mysqli_real_escape_string($con,$_POST['departemen']));
+// 	$kodeDiv = trim(mysql_escape_string($con,$_POST['kode']));
+// 	$namaDiv = trim(mysql_escape_string($con,$_POST]['divisi']));
 
-	mysqli_query($con,"UPDATE divisi SET ") or die (mysql_error($con));
-}
+// 	mysqli_query($con,"UPDATE divisi SET ") or die (mysql_error($con));
+// }
 
-}
+// }
 ?>
