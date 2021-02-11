@@ -70,7 +70,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">KEMBALI</button>
-                  <a href="data.php" type="submit" class="btn btn-primary float-right">SUBMIT</a>
+                  <a href="data.php" type="submit" class="btn btn-primary float-right"><i>SUBMIT</i></a>
                 </div>
                 <!-- /.card-footer -->
               </form>
