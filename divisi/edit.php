@@ -31,21 +31,23 @@
               <!-- form start -->
               <?php
                   $id= @$_GET['id'];
-                  $sql_divisi= mysqli_query($con,"SELECT * FROM divisi WHERE id_div='$id' ") or die(mysqli_error($con));
+                  $sql_divisi= mysqli_query($con,"SELECT * FROM divisi
+                                                    INNER JOIN master_departemen ON divisi.id_departemen = master_departemen.id_departemen WHERE id_div='$id' ") or die(mysqli_error($con));
                   $data=mysqli_fetch_array($sql_divisi);
 
 
               ?>
               <form method= "post" action="proses.php" class="form-horizontal">
-                <input type="hidden" name="id" value="<?=$data['id_departemen']?>">
+                <input type="hidden" name="id" value="<?=$data['id_div']?>">
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="departemen"  class="col-sm-2 col-form-label" required>Departemen</label>
                      <div class="col-sm-6">
                       <!-- select -->
                       <div class="form-group">
+
                         <select name="departemen" id="departemen" class="form-control">
-                          <option>-Pilih-</option>
+                          <option value="<?=$data['id_departemen']?>" ><?=$data['nama_departemen']?></option>
                           <?php
                                 $sql_departemen =mysqli_query($con, "SELECT * FROM master_departemen") or die (mysqli_error($con));
                                 while ($data_departemen = mysqli_fetch_array($sql_departemen)) {
@@ -53,6 +55,8 @@
             
                           }?>
                         </select>
+
+
                       </div>
                     </div>
                   </div>
@@ -60,7 +64,7 @@
                   <div class="form-group row">
                     <label for="namabarang" class="col-sm-2 col-form-label">Kode Divisi</label>
                     <div class="col-sm-10">
-    <input type="text" name="namabarang" class="form-control" id="namabarang" placeholder="Nama Barang" autofocus required value="<?=$data['kode_div']?>">
+    <input type="text" name="kode" class="form-control" id="namabarang" placeholder="Nama Barang" autofocus required value="<?=$data['kode_div']?>">
                     </div>
                   </div>
 
@@ -68,7 +72,7 @@
                   <div class="form-group row">
                     <label for="kodebarang" class="col-sm-2 col-form-label">Nama Divisi</label>
                     <div class="col-sm-10">
-                      <input name="kodebarang" type="text" class="form-control" id="inputPassword3" placeholder="Kode Barang" required value="<?=$data['nama_div']?>">
+                      <input name="divisi" type="text" class="form-control" id="inputPassword3"  required value="<?=$data['nama_div']?>">
                     </div>
                   </div>
                     

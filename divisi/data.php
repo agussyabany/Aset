@@ -66,7 +66,7 @@ include_once('../header.php'); ?>
                   </thead>
                   <tbody>
         <?php
-        $batas = 5;
+        $batas = 10;
         $hal = @$_GET['hal'];
         if(empty($hal)){
           $posisi = 0;

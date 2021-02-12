@@ -13,6 +13,8 @@ if(isset($_POST['add'])) {
 	$nama = trim(mysqli_real_escape_string($con, $_POST['nama']));
 	mysqli_query($con,"INSERT INTO master_departemen (kode_departemen,nama_departemen) VALUES ('$kode','$nama')") or die(mysqli_error($con));
 	echo" <script>window.location='data.php';</script>";
+ 
+
  } else if(isset($_POST['edit'])){
 	for ($i=0; $i<count($_POST['id']) ; $i++) {
 	$id = $_POST['id'][$i];

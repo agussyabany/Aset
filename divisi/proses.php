@@ -14,21 +14,20 @@ if(isset($_POST['add'])) {
 	
 
 	mysqli_query($con,"INSERT INTO divisi (id_departemen,kode_div,nama_div) VALUES ('$idDep','$kodeDiv','$namaDiv')") or die(mysqli_error($con));
+       echo"<script>window.location='data.php';</script>";
+	
 
 
-	// $obat =  $_POST['obat'];
-	// foreach ($obat as $ob) {
-	// 	mysqli_query($con,"INSERT INTO tb_rm_obat(id_rm,id_obat) VALUES ('$uuid','$ob')") or die(mysqli_error($con));
-	}
-	echo" <script>window.location='data.php';</script>";
- 
-// else if (isset($_POST['add'])) {
-// 	$idDep = trim(mysqli_real_escape_string($con,$_POST['departemen']));
-// 	$kodeDiv = trim(mysql_escape_string($con,$_POST['kode']));
-// 	$namaDiv = trim(mysql_escape_string($con,$_POST]['divisi']));
+	}else if (isset($_POST['edit'])) {
+	$idDiv = trim(mysqli_escape_string($con,$_POST['id']));
+	$namDep = trim(mysqli_real_escape_string($con,$_POST['departemen']));
+	$kodeDiv = trim(mysqli_escape_string($con,$_POST['kode']));
+	$namaDiv = trim(mysqli_escape_string($con,$_POST['divisi']));
 
-// 	mysqli_query($con,"UPDATE divisi SET ") or die (mysql_error($con));
-// }
+	mysqli_query($con,"UPDATE divisi SET id_departemen = '$namDep', kode_div = '$kodeDiv', nama_div = '$namaDiv' WHERE id_div = '$idDiv'  ") or die (mysql_error($con));
+	echo"<script>window.location='data.php';</script>";
 
-// }
+}
+
+
 ?>
