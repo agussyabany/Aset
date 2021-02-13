@@ -27,16 +27,16 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="post" class="form-horizontal">
+              <form method="post" action="proses.php" class="form-horizontal">
                 <div class="card-body">
                   <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label" required>Departement</label>
+                    <label for="" class="col-sm-2 col-form-label" required>Departement</label>
                     <div class="col-sm-6">
                       <!-- select -->
                       <div class="form-group">
                         
                         <select name="departemen" id="departemen"  class="form-control">
-                          <option>-PILIH-</option>
+                          
                            <?php
                                 $sql_departemen =mysqli_query($con, "SELECT * FROM master_departemen") or die (mysqli_error($con));
                                   while ($data_departemen = mysqli_fetch_array($sql_departemen)) {
@@ -54,26 +54,27 @@
                       <!-- select -->
                       <div class="form-group">
                         <select id="divisi" name="divisi" class="form-control">
-                          <option>-PILIH-</option>
-                          
-
 
                         </select>
                       </div>
+
+
                     </div>
+
+
                   </div>
                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Ruangan</label>
+                    <label for="ruangan" class="col-sm-2 col-form-label">Ruangan</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Nama Ruangan" required>
+                      <input type="text" name="ruangan" class="form-control" id="ruangan" placeholder="Nama Ruangan" required>
                     </div>
                   </div>
                     
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">KEMBALI</button>
-                  <a href="data.php" type="submit" class="btn btn-primary float-right"><i>SUBMIT</i></a>
+                  <a href="data.php" type="submit" class="btn btn-primary"><i>KEMBALI</i></a>
+                 <button type="submit" name="add" class="btn btn-primary float-right">SUBMIT</button>
                 </div>
                 <!-- /.card-footer -->
               </form>
@@ -87,32 +88,30 @@
 </div>
 <script>
   $("#departemen").change(function(){
-
-
-    var id_departemen =$("#departemen").val();
+    var idDepartemen = $("#departemen").val();
     $.ajax({
       type: "POST",
       dataType: "html",
       url: "divData.php",
-      data: "departemen="+id_departemen,
+      data: "departemen="+idDepartemen,
       success: function(data){
         $("#divisi").html(data);
       }
     });
   });
 
-  $("#divisi").change(function(){
+  // $("#divisi").change(function(){
 
 
-    var id_div = $("#divisi").val();
-    $.ajax({
-      type: "POST",
-      dataType: "html",
-      url: "divData.php",
-      data: "divisi="+id_div,
+  //   var idDiv = $("#divisi").val();
+  //   $.ajax({
+  //     type: "POST",
+  //     dataType: "html",
+  //     url: "divData.php",
+  //     data: "divisi="+idDiv,
       
-    })
-  })
+  //   });
+  // });
 
 </script>
 
