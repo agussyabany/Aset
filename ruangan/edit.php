@@ -1,0 +1,133 @@
+<?php include_once('../header.php'); ?>
+
+<div class="wrapper">
+  <div class="content-wrapper" style="min-height: 1235.01px;">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>General Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">General Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+      <div class="container-fluid" style="margin-left: 350px; margin-top: 100px;" >
+        <div class="row">
+          <div class="col-md-6">
+              <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Master Ruangan</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <?php
+                  $id= @$_GET['id'];
+                  $sql_ruang= mysqli_query($con,"SELECT * FROM ruangan
+              INNER JOIN divisi ON ruangan.id_div = divisi.id_div INNER JOIN master_departemen ON ruangan.id_departemen = master_departemen.id_departemen WHERE id_ruang='$id' ") or die(mysqli_error($con));
+                  $data=mysqli_fetch_array($sql_ruang);
+
+
+              ?>
+              <form method="post" action="proses.php" class="form-horizontal">
+                <input type="hidden" name="id" value="<?=$data['id_ruang']?>">
+                <div class="card-body">
+                  <div class="form-group row">
+                    <label for="" class="col-sm-2 col-form-label" required>Departement</label>
+                    <div class="col-sm-6">
+                      <!-- select -->
+                      <div class="form-group">
+                        
+                        <select name="departemen" id="departemen"  class="form-control">
+                           <option value="<?=$data['id_departemen']?>" ><?=$data['nama_departemen']?></option>
+                           <?php
+                                $sql_departemen =mysqli_query($con, "SELECT * FROM master_departemen") or die (mysqli_error($con));
+                                  while ($data_departemen = mysqli_fetch_array($sql_departemen)) {
+                                  echo '<option value="'.$data_departemen['id_departemen'].'">'.$data_departemen['nama_departemen'].'</option>';
+            
+                          }?>
+                        </select>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="divisi" class="col-sm-2 col-form-label" required>Nama Divisi</label>
+                    <div class="col-sm-6">
+                      <!-- select -->
+                      <div class="form-group">
+                        <select id="divisi" name="divisi" class="form-control">
+                        <option value="<?=$data['id_div']?>" ><?=$data['nama_div']?></option>
+
+                        </select>
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+                  <div class="form-group row">
+                    <label for="ruangan" class="col-sm-2 col-form-label">Ruangan</label>
+                    <div class="col-sm-10">
+                      <input value="<?=$data['ruang']?>" type="text" name="ruangan" class="form-control" id="ruangan" placeholder="Nama Ruangan" required>
+                    </div>
+                  </div>
+                    
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <a href="data.php" type="submit" class="btn btn-primary"><i>KEMBALI</i></a>
+                 <button type="submit" name="edit" class="btn btn-primary float-right">SUBMIT</button>
+                </div>
+                <!-- /.card-footer -->
+              </form>
+            </div>
+            </div>
+            </div>
+          </div>
+            </section>
+            </div>
+            </div>
+</div>
+<script>
+  $("#departemen").change(function(){
+    var idDepartemen = $("#departemen").val();
+    $.ajax({
+      type: "POST",
+      dataType: "html",
+      url: "divData.php",
+      data: "departemen="+idDepartemen,
+      success: function(data){
+        $("#divisi").html(data);
+      }
+    });
+  });
+
+  // $("#divisi").change(function(){
+
+
+  //   var idDiv = $("#divisi").val();
+  //   $.ajax({
+  //     type: "POST",
+  //     dataType: "html",
+  //     url: "divData.php",
+  //     data: "divisi="+idDiv,
+      
+  //   });
+  // });
+
+</script>
+
+
+
+
+
+
+<?php include_once('../footer.php'); ?>
