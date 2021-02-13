@@ -1,12 +1,5 @@
 <?php 
 require_once"../config/config.php";
-//require"../_assets/libs/vendor/autoload.php";
-
-//use Ramsey\Uuid\Uuid;
-//use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
-//$uuid4 = Uuid::uuid4();
-//echo $uuid4->toString();
-
 if(isset($_POST['add'])) {
 	//$uuid= uuid::uuid4()->toString();
 	$kode = trim(mysqli_real_escape_string($con, $_POST['kode']));
