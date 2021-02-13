@@ -27,34 +27,37 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form class="form-horizontal">
+              <form method="post" class="form-horizontal">
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label" required>Departement</label>
                     <div class="col-sm-6">
                       <!-- select -->
                       <div class="form-group">
-                        <select class="form-control">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
+                        
+                        <select name="departemen" id="departemen"  class="form-control">
+                          <option>-PILIH-</option>
+                           <?php
+                                $sql_departemen =mysqli_query($con, "SELECT * FROM master_departemen") or die (mysqli_error($con));
+                                  while ($data_departemen = mysqli_fetch_array($sql_departemen)) {
+                                  echo '<option value="'.$data_departemen['id_departemen'].'">'.$data_departemen['nama_departemen'].'</option>';
+            
+                          }?>
                         </select>
+                        
                       </div>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label" required>Nama Divisi</label>
+                    <label for="divisi" class="col-sm-2 col-form-label" required>Nama Divisi</label>
                     <div class="col-sm-6">
                       <!-- select -->
                       <div class="form-group">
-                        <select class="form-control">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
+                        <select id="divisi" name="divisi" class="form-control">
+                          <option>-PILIH-</option>
+                          
+
+
                         </select>
                       </div>
                     </div>
@@ -82,6 +85,36 @@
             </div>
             </div>
 </div>
+<script>
+  $("#departemen").change(function(){
+
+
+    var id_departemen =$("#departemen").val();
+    $.ajax({
+      type: "POST",
+      dataType: "html",
+      url: "divData.php",
+      data: "departemen="+id_departemen,
+      success: function(data){
+        $("#divisi").html(data);
+      }
+    });
+  });
+
+  $("#divisi").change(function(){
+
+
+    var id_div = $("#divisi").val();
+    $.ajax({
+      type: "POST",
+      dataType: "html",
+      url: "divData.php",
+      data: "divisi="+id_div,
+      
+    })
+  })
+
+</script>
 
 
 
