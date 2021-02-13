@@ -17,7 +17,7 @@
 <!-- jQuery -->
 
 
-<!--script src="../assets/plugins/jquery/jquery.min.js"></script-->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
 <script src="../assets/libs/DataTables2/datatables.min.js"></script>
 <!--  jQuery UI 1.11.4 -->
 <script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
