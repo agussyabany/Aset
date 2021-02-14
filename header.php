@@ -43,6 +43,7 @@ if(!isset($_SESSION['user'])) {
    <script src="../assets/js/jquery-3.4.1.min.js"></script>
    <script src="../assets/js/3463b090afc66f573d74febe0935c1f6.js"></script>
    
+   
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
