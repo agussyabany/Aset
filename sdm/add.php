@@ -42,12 +42,12 @@
                     <div class="col-sm-6">
                       <!-- select -->
                       <div class="form-group">
-                        <select class="form-control">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
+                        <select class="form-control js-example-basic-single">
+                          <option value="option1">option 1</option>
+                          <option value="option2">option 2</option>
+                          <option value="option3">option 3</option>
+                          <option value="option4">option 4</option>
+                          <option value="option5">option 5</option>
                         </select>
 
                         <div class="form-check">
@@ -82,7 +82,13 @@
 </div>
 
 
+<script>
+  $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+    });
 
+
+</script>
 
 
 

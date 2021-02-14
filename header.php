@@ -41,6 +41,7 @@ if(!isset($_SESSION['user'])) {
   <link rel="stylesheet" href="../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
    <link rel="stylesheet" href="../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+   <script src="../assets/js/3463b090afc66f573d74febe0935c1f6.js"></script>
    
 
 </head>
