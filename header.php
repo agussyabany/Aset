@@ -162,7 +162,7 @@ if(!isset($_SESSION['user'])) {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('laveransir')?>" class="nav-link">
+                <a href="<?=base_url('lokasi')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Master Lokasi</p>
                 </a>
