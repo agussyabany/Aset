@@ -30,12 +30,12 @@ if(isset($_SESSION['user'])){
 
 
 <body class="hold-transition login-page">
-
-<div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>SISTEM INFORMASI </b> ASET PERUMDAM TIRTA KENCANA KOTA SAMARINDA</a>
-  </div>
+  <img src="../pic/logo3.png" width="350px" height="300px">
+  <div class="login-box">
+    <div class="login-logo">
+    SISTEM INFORMASI ASET
   <!-- /.login-logo -->
+  </div>
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">SILAKAN LOGIN</p>
