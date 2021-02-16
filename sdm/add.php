@@ -44,9 +44,12 @@
 
                       <div class="form-group">
                         <select name="jabatan" id="jabatan" class="form-control js-example-basic-single">
-                          <option value="1">Menejer</option>
-                          <option value="2">Asisten Menejer</option>
-                          <option value="2">Staff</option>
+                          <?php
+                                $sql_jabatan =mysqli_query($con, "SELECT * FROM jabatan") or die (mysqli_error($con));
+                                  while ($data_jabatan = mysqli_fetch_array($sql_jabatan)) {
+                                  echo '<option value="'.$data_jabatan['id_jabatan'].'">'.$data_jabatan['jabatan'].'</option>';
+            
+                          }?>
                         </select>
                       </div>
 
