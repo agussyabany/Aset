@@ -92,34 +92,25 @@ if(isset($_SESSION['user'])){
                     if(mysqli_num_rows($sql_login) > 0) {
                       $_SESSION['user'] = $user;
                       echo "<script>window.location= '".base_url()."';</script>";
-                    } else{
-                      echo 
+                    }else{?>
+                      <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                          <div class="alert alert-danger alert-dismissable" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <span class="glyphicon glyphicon-exclmation-sign" aria-hidden="true"></span>
+                            <strong>Login gagal</strong>Username / password salah
 
-                      '<div class="modal fade" id="modal-danger">
-                              <div class="modal-dialog">
-                                <div class="modal-content bg-danger">
-                                  <div class="modal-header">
-                                    <h4 class="modal-title">Danger Modal</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <p>One fine body&hellip;</p>
-                                  </div>
-                                  <div class="modal-footer justify-content-between">
-                                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-outline-light">Save changes</button>
-                                  </div>
-                                </div>
-                                <!-- /.modal-content -->
-                              </div>
-                              <!-- /.modal-dialog -->
-                            </div>';
-      
-}
-}
-                 ?>    
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <?php
+
+                    }
+                }
+
+                ?>
 
 <!-- jQuery -->
 <script src="<?=base_url('assets/plugins/jquery/jquery.min.js')?>"></script>

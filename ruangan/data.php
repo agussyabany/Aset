@@ -139,8 +139,8 @@ include_once('../header.php'); ?>
     </div>
   
     
-      <div class="pagination"  style="float:right;">
-      <ul class="pagination" style="margin:0">
+      <div style="float:right;">
+      <ul class="c" style="margin:0">
         <?php
         $jml_hal = ceil($jml / $batas);
         for ($i=1; $i <= $jml_hal; $i++) { 

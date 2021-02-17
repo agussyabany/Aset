@@ -55,7 +55,7 @@ include_once('../header.php'); ?>
                   <tr>
                     
                     <th>No</th>
-                    <th>Nama SMD</th>
+                    <th>Nama</th>
                     <th>Jabatan</th>
                     <th>Bagian</th>
                     <th><i class ="glyphicon glyphicon-cog"></i></th>
@@ -78,30 +78,24 @@ include_once('../header.php'); ?>
         if($_SERVER['REQUEST_METHOD'] == "POST") {
           $pencarian = trim(mysqli_real_escape_string($con, $_POST['pencarian']));
           if($pencarian !='') {
-            $sql = "SELECT * FROM sdm
-              INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan ";
+            $sql = "SELECT * FROM sdm INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan";
             $query = $sql;
             $queryJml = $sql;
           } else {
-            $query = "SELECT * FROM sdm
-              INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan  LIMIT $posisi,$batas";
-            $queryJml ="SELECT * FROM sdm
-              INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan ";
+            $query = "SELECT * FROM sdm INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan LIMIT $posisi,$batas";
+            $queryJml ="SELECT * FROM sdm INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan";
             $no = $posisi + 1;
           }
         } else {
-          $query = "SELECT * FROM sdm
-              INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan  LIMIT $posisi,$batas";
-          $queryJml ="SELECT * FROM ruangan
-              SELECT * FROM sdm
-              INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan ";
+          $query = "SELECT * FROM sdm INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan LIMIT $posisi,$batas";
+          $queryJml ="SELECT * FROM sdm INNER JOIN jabatan ON sdm.id_jabatan = jabatan.id_jabatan";
           $no = $posisi + 1;
 
         }
         
-        $sql_ruang=mysqli_query($con, $query)or die (mysqli_error($con));
-        if(mysqli_num_rows($sql_ruang)> 0) {
-          while($data = mysqli_fetch_array($sql_ruang)){?>
+        $sql_sdm=mysqli_query($con, $query)or die (mysqli_error($con));
+        if(mysqli_num_rows($sql_sdm)> 0) {
+          while($data = mysqli_fetch_array($sql_sdm)){?>
             <tr>
               <td><?=$no++?></td>
               <td><?=$data['nama']?></td>

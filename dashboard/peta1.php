@@ -16,7 +16,7 @@
 
 
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAbXF62gVyhJOVkRiTHcVp_BkjPYDQfH5w"></script>
-
+<?php //'?>
 <script type="text/javascript">
   function initialize() {
     
@@ -36,7 +36,7 @@
 
 var officeLocations = [
 <?php
-$data = file_get_contents('http://localhost/Aset/dashboard/ambildata.php');
+$data = file_get_contents('http://localhost/Aset/dashboard/ambildata.php' );
                 $no=1;
                 if(json_decode($data,true)){
                   $obj = json_decode($data);
