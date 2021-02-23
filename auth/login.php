@@ -15,14 +15,9 @@ if(isset($_SESSION['user'])){
   <title>LOGIN</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Font Awesome -->
   <link href="<?=base_url('assets/plugins/fontawesome-free/css/all.min.css');?>" rel="stylesheet">
-  
-  
-  
   <link  href="<?=base_url('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css');?>" rel="stylesheet">
-  
   <link  href="<?=base_url('assets/dist/css/adminlte.min.css');?>" rel="stylesheet">
   
  

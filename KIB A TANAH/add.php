@@ -32,28 +32,44 @@
                   <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label" required>Nama Aset</label>
                     <div class="col-sm-6">
-                      <!-- select -->
                       <div class="form-group">
-                        <select class="form-control">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
-                        </select>
+                          
+            
+                <select class="form-control select2bs4 select2" style="width: 100%;" data-select2-id="25" tabindex="-1" aria-hidden="true" name="namaAset" id="namaAset" onchange="changeValue(this.value)">                  
+                      
+                    <option selected="selected" data-select2-id="27">Alabama</option>
+                    <option data-select2-id="74">Alaska</option>
+                    <option disabled="disabled" data-select2-id="75">California (disabled)</option>
+                    <option data-select2-id="76">Delaware</option>
+                    <option data-select2-id="77">Tennessee</option>
+                    <option data-select2-id="78">Texas</option>
+                    <option data-select2-id="79">Washington</option>
+
+
+                </select>
+    
+          <span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" data-select2-id="10" style="width: 100%;">
+          <span class="selection">
+          <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-vvsj-container">
+                      <!-- select -->
+                     
+
+
+
+                
                       </div>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Kode Aset</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Kode Aset" autofocus required>
+                      <input type="text" class="form-control" name="kode" id="kode" placeholder="Kode Aset"  required value="">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Register</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Register" required>
+                      <input type="text" class="form-control" id="inputPassword3" placeholder="Register" required/>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -198,7 +214,29 @@
             </div>
             </div>
 </div>
+ 
+<script>
 
+$(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+  }) 
+</script>
+
+
+<script>   
+    <?php echo $jsArray; ?> 
+    function changeValue(namaAset){ 
+    document.getElementById('kode').value = dtMbr[namaAset].kode_barang; 
+     
+    };
+</script>
 
 
 
