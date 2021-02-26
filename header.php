@@ -33,24 +33,18 @@ if(!isset($_SESSION['user'])) {
   <link rel="stylesheet" href="../assets/plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" >
-  <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
-  <link rel="stylesheet" href="../assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"> -->
   <link rel="stylesheet" href="../assets/plugins/daterangepicker/daterangepicker.css">
-  
   <link rel="stylesheet" href="../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-   <link rel="stylesheet" href="../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-   <script src="../assets/js/jquery-3.4.1.min.js"></script>
-   <script src="../assets/js/3463b090afc66f573d74febe0935c1f6.js"></script>
+  <link rel="stylesheet" href="../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   
-
-  
-  
-
-  
-  <!--link href='../assets/select_2/select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'-->
-   
-   
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="../assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href="../assets/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+  <link href="../assets/select_2/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -248,7 +242,7 @@ if(!isset($_SESSION['user'])) {
 
 
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="" class="nav-link">
                   <!--<i class="nav-icon fas fa-angle-left"></i>-->
                   <p>View Data Aset
                   <i class="right fas fa-angle-left"></i></p>
@@ -257,7 +251,7 @@ if(!isset($_SESSION['user'])) {
 
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url('view_data')?>" class="nav-link">
                           <i class="far fa-angle-left"></i>
                           <p>KIB</p>
                         </a>
@@ -310,7 +304,7 @@ if(!isset($_SESSION['user'])) {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Data Pengadaan</p>
                 </a>

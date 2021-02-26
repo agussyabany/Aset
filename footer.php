@@ -17,8 +17,14 @@
 <!-- jQuery -->
 
 
-<script src="../assets/plugins/jquery/jquery.min.js"></script>
-<script src="../assets/plugins/select2/js/select2.full.min.js"></script>
+<!-- <script src="../assets/plugins/jquery/jquery.min.js"></script> -->
+<!-- <script src='../assets/select_2/jquery-3.2.1.min.js' type='text/javascript'></script> -->
+<script src="../assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../assets/js/3463b090afc66f573d74febe0935c1f6.js"></script>
+<script src='../assets/select_2/select2/dist/js/select2.full.js' type='text/javascript'></script>
+<script src="../assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
+<!-- <script src="../assets/plugins/select2/js/select2.full.min.js"></script> -->
 <script src="../assets/libs/DataTables2/datatables.min.js"></script>
 <!--  jQuery UI 1.11.4 -->
 <script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -53,5 +59,9 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="../assets/dist/js/demo.js"></script>
+
+
+
+
 </body>
 </html>
